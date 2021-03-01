@@ -1,7 +1,7 @@
 package com.example.demo;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DemoApplication implements CommandLineRunner {
 	
-	private ArrayList<Player> players = new ArrayList<Player>();
+	private ArrayList<Player> players = new ArrayList<>();
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
