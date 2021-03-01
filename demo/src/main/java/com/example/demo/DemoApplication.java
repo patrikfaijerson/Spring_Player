@@ -20,11 +20,12 @@ public class DemoApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		int selectedChoice = 0;
 		while(selectedChoice != 100){
+			System.out.println();
 			System.out.println("*** MENU ***");
 			System.out.println("1: Add New Player");
 			System.out.println("3: List players");
 			System.out.println("100: Exit");
-			System.out.println("Enter menu choice");
+			System.out.print("Enter menu choice: ");
 			selectedChoice = Integer.parseInt(System.console().readLine());
 
 			switch(selectedChoice){
@@ -36,11 +37,6 @@ public class DemoApplication implements CommandLineRunner {
 				System.out.println("Invalid menu choice");	
 
 			}
-			
-
-
-
-
 
 		}
 		
@@ -48,20 +44,19 @@ public class DemoApplication implements CommandLineRunner {
 
 	private void listPLayers() {
 		System.out.println("*** List players ***");
-		Iterator<Player> it = players.iterator();
-        System.out.println("Players listed: ");
-        while(it.hasNext()){
-            System.out.println(it.next());
-        }
+		players.forEach(p-> {
+			System.out.println(p);
+		});
+        
 	}
 
 	private void addNewPlayer() {
 		System.out.println("*** Add new player ***");
-		System.out.println("Name: ");
+		System.out.print("Name: ");
 		String name = System.console().readLine();
-		System.out.println("JerseyNumber: ");
+		System.out.print("JerseyNumber: ");
 		String jerseyNumber = System.console().readLine();
-		System.out.println("Age: ");
+		System.out.print("Age: ");
 		int age = Integer.parseInt(System.console().readLine());
 
 		Player player = new Player(name, jerseyNumber, age);
