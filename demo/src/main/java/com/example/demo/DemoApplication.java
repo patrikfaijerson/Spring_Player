@@ -2,7 +2,7 @@ package com.example.demo;
 
 import java.util.ArrayList;
 
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,6 +11,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DemoApplication implements CommandLineRunner {
 	
 	private ArrayList<Player> players = new ArrayList<>();
+	@Autowired
+	private PlayerRepository playerRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
@@ -60,7 +62,9 @@ public class DemoApplication implements CommandLineRunner {
 		int age = Integer.parseInt(System.console().readLine());
 
 		Player player = new Player(name, jerseyNumber, age);
-		players.add(player);
+		playerRepository.save(player);
+		//players.add(player);
+		System.out.println("Player added");
 	}
 
 }
