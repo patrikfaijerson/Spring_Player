@@ -16,6 +16,8 @@ class Player{
     private String jerseyNumber;
     private int age;
 
+    public Player(){}
+
     public Player(String name, String jerseyNumber, int age){
         this.name = name;
         this.jerseyNumber = jerseyNumber;
@@ -24,7 +26,39 @@ class Player{
 
     @Override
     public String toString() {
-        return "Name:" + name + " JerseyNumber: " + jerseyNumber + " Age " + age;
+        return "Id:" + id +"Name:" + name + " JerseyNumber: " + jerseyNumber + " Age " + age;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getJerseyNumber() {
+        return jerseyNumber;
+    }
+
+    public void setJerseyNumber(String jerseyNumber) {
+        this.jerseyNumber = jerseyNumber;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
 }
