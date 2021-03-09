@@ -1,25 +1,25 @@
 package com.example.demo;
 
 
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 
-@SpringBootApplication
-public class DemoApplication implements CommandLineRunner {
+@SpringBootApplication(exclude = {SecurityAutoConfiguration.class })
+public class DemoApplication{
 	
-
-	@Autowired
-	private PlayerRepository playerRepository;
-
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-	@Override
+	
 	public void run(String... args) throws Exception {
+	//	showMenu();
+		
+	}
+
+	/*
+	private void showMenu() {
 		int selectedChoice = 0;
 		while(selectedChoice != 100){
 			System.out.println();
@@ -47,7 +47,6 @@ public class DemoApplication implements CommandLineRunner {
 			}
 
 		}
-		
 	}
 
 	
@@ -112,7 +111,7 @@ public class DemoApplication implements CommandLineRunner {
 	
 	}
 
-
+*/
 
 
 }
