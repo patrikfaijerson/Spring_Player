@@ -45,6 +45,9 @@ public class DemoApplication implements CommandLineRunner{
 					break;
 				case 4 : deletePlayer();
 					break;	
+				case 100 : 
+				System.out.print("Bye Bye!");
+					break;	
 				default: 
 				System.out.println("Invalid menu choice");	
 
@@ -103,10 +106,11 @@ public class DemoApplication implements CommandLineRunner{
 	}
 	private void deletePlayer(){
 		System.out.println("*** Delete Player ***");
-		System.out.print("Select id of player to update: ");
+		System.out.print("Select id of player to delete: ");
 		int selectedId = Integer.parseInt(System.console().readLine());
 		if(playerRepository.existsById(selectedId)){
 			playerRepository.deleteById(selectedId);
+			System.out.println("Player with id " + selectedId + " deleted");
 		}
 		else{
 			System.out.print("No player with id: " + selectedId + " exists!");

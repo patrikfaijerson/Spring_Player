@@ -26,7 +26,7 @@ class Player{
 
     @Override
     public String toString() {
-        return "Id:" + id +"Name:" + name + " JerseyNumber: " + jerseyNumber + " Age " + age;
+        return "Id: " + id +" Name: " + name + " JerseyNumber: " + jerseyNumber + " Age: " + age;
     }
 
     public Integer getId() {
